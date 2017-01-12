@@ -7,3 +7,23 @@ I am returning to Santander Cycles / Boris Bikes as want to make a return to Rub
 #### Project ####
 
 The aim of Santander Cycles is to build up a model example of the system in place e.g. docking stations, bikes, infrastructure and so forth.  
+
+#### User Stories ####
+
+```
+As a person,
+So that I can use a bike,
+I'd like a docking station to release a bike.
+
+As a person,
+So that I can use a good bike,
+I'd like to see if a bike is working
+```
+
+#### Domain Model ####
+
+Objects  | Messages
+------------- | -------------
+Person  |
+Bike  | working?
+DockingStation | release_bike
