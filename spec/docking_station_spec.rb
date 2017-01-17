@@ -20,12 +20,6 @@ it 'is expected that the bike should be working' do
   expect(bike).to be_working
 end
 
-it 'docks a bike' do
-  bike = Bike.new
-  subject.dock(bike)
-  expect(subject.bike).to eq bike
-end
-
   describe '#release_bike' do
 
     it 'releases a bike' do
@@ -36,6 +30,22 @@ end
 
     it 'doesn\'t release bikes if there aren\'t any at the docking station' do
       expect{subject.release_bike}.to raise_error "No bikes available"
+    end
+
+  end
+
+  describe '#dock' do
+
+    it 'docks a bike' do
+      bike = Bike.new
+      subject.dock(bike)
+      expect(subject.bike).to eq bike
+    end
+
+    it "will not dock a bike if one has already been docked" do
+      bike = Bike.new
+      subject.dock(bike)
+      expect{subject.dock(bike)}.to raise_error "Docking station is full, unable to dock your bike"
     end
 
   end
