@@ -20,6 +20,16 @@ it 'is expected that the bike should be working' do
   expect(bike).to be_working
 end
 
+it 'has a default capacity of 20 bikes' do
+  station = DockingStation.new
+  expect(station.capacity).to eq DockingStation::DEFAULT_CAPACITY
+end
+
+it 'allows the capacity of bikes to be changed by admin' do
+  station = DockingStation.new(50)
+  expect(station.capacity).to eq 50
+end
+
   describe '#release_bike' do
 
     it 'releases a bike' do
