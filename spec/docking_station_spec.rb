@@ -24,7 +24,7 @@ end
 
     it 'releases a bike' do
       bike = Bike.new
-      subject.dock(bike)
+      p subject.dock(bike)
       expect(subject.release_bike).to eq bike
     end
 
@@ -52,5 +52,6 @@ end
     end
 
   end
+
 
 end
