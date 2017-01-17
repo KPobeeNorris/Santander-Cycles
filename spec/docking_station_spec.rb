@@ -24,14 +24,14 @@ end
 
     it 'releases a bike' do
       bike = Bike.new
-      p subject.dock(bike)
+      subject.dock(bike)
       expect(subject.release_bike).to eq bike
     end
 
     it 'doesn\'t release bikes if there aren\'t any at the docking station' do
       station = DockingStation.new
-      20.times {station.dock Bike.new}
-      20.times {station.release_bike}
+      DockingStation::DEFAULT_CAPACITY.times {station.dock Bike.new}
+      DockingStation::DEFAULT_CAPACITY.times {station.release_bike}
       expect{subject.release_bike}.to raise_error "No bikes available"
     end
 
@@ -47,7 +47,7 @@ end
 
     it "will not dock a bike if the station is full" do
       station = DockingStation.new
-      20.times {station.dock Bike.new}
+      DockingStation::DEFAULT_CAPACITY.times {station.dock Bike.new}
       expect{station.dock Bike.new}.to raise_error "Docking station is full, unable to dock your bike"
     end
 
