@@ -21,6 +21,7 @@ class DockingStation
 
   def dock(bike)
     raise 'Docking station is full, unable to dock your bike' if full?
+    
     bikes << bike
   end
 

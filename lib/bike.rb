@@ -14,4 +14,8 @@ attr_reader :broken
     @broken
   end
 
+  def fixed
+    @broken = false
+  end
+
 end
