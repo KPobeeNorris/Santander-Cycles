@@ -22,7 +22,6 @@ class DockingStation
     bikes << bike
   end
 
-
   private
 
   def full?
