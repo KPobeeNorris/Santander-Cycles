@@ -1,22 +1,19 @@
+
 class Van
 
-  attr_reader :capacity
+  attr_reader :capacity, :bikes
 
   def initialize(capacity=20)
     @capacity = capacity
-    @bikes_in_transport = []
+    @bikes = []
   end
 
-  def collect_bike(location)
-    bikes.each{|bike| bikes_in_transport << bike}
+  def collect_bike(bike)
+    bikes << bike
   end
 
-  def deliver_bike(location)
-    if location == 'garage'
-      bikes_in_transport.each{|bike| garage.broken.bikes << bike }
-    else
-      bikes_in_transport.each{|bike| docking_station.bikes << bike }
-    end
+  def remove_bike(bike)
+    bike.pop
   end
 
 end

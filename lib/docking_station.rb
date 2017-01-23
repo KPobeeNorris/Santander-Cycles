@@ -21,8 +21,15 @@ class DockingStation
 
   def dock(bike)
     raise 'Docking station is full, unable to dock your bike' if full?
-    
+      bikes << bike
+  end
+
+  def add_bike(bike)
     bikes << bike
+  end
+
+  def remove_bike(bike)
+    bike.pop
   end
 
   private
