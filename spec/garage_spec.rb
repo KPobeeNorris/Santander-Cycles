@@ -7,9 +7,9 @@ describe Garage do
 
   it "can repair broken bikes" do
     bike = double :bike, fixed: nil, broken?: false
-   subject.add_bike bike
-   subject.repair_bikes
-   expect(bike).not_to be_broken
+    subject.add_bike bike
+    subject.repair_bikes
+    expect(bike).not_to be_broken
   end
-
+  
 end

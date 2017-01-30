@@ -1,19 +1,15 @@
-
 class Van
-
-  attr_reader :capacity, :bikes
-
-  def initialize(capacity=20)
-    @capacity = capacity
-    @bikes = []
-  end
+  include BikeContainer
 
   def collect_bike(bike)
-    bikes << bike
+    add_bike(bike)
   end
 
-  def remove_bike(bike)
-    bike.pop
+  def release_bike
+    fail 'No bikes available' if bikes.empty?
+    bikes.delete bikes.pop
   end
+
+
 
 end
