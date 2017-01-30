@@ -14,6 +14,11 @@ module BikeContainer
     bikes << bike
   end
 
+  def remove_bike
+    raise "#{self.class.name} is empty; unable to release a bike at this time!" if empty?
+    bikes.pop
+  end
+
   def empty?
     bikes.empty?
   end
