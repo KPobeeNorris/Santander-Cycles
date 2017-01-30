@@ -1,15 +1,15 @@
 require 'garage'
+require 'support/bike_container_shared_examples'
 
 describe Garage do
 
-it {is_expected.to respond_to :repair_bikes}
+  it_behaves_like BikeContainer
 
-it "has a capacity to repair up to 20 bikes at a time" do
-
-end
-
-it "can repair broken bikes" do
-  
-end
+  it "can repair broken bikes" do
+    bike = double :bike, fixed: nil, broken?: false
+   subject.add_bike bike
+   subject.repair_bikes
+   expect(bike).not_to be_broken
+  end
 
 end
